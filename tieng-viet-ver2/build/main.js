@@ -99,7 +99,7 @@ var AboutPage = (function () {
         this.outputData = "";
     }
     AboutPage.prototype.change_alias = function (alias) {
-        var str = alias;
+        var str = alias + " ";
         str = str.replace(/c([^hH])/g, "k$1");
         str = str.replace(/C([^hH])/g, "K$1");
         str = str.replace(/ch/g, "c");
@@ -141,10 +141,9 @@ var AboutPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-about',template:/*ion-inline-start:"/Users/tranthehuy/code/ionic/myApp/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Công cụ\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n\n    <ion-item>\n      <ion-label stacked>Chữ cần chuyển</ion-label>\n      <ion-textarea #textInput rows="3" maxLength="500" [(ngModel)]="inputData" (keyup)="updateInputData()" (change)="updateInputData()"></ion-textarea>\n      <!-- <ion-textarea #msgInput rows="3" maxLength="500" (keyup)=""></ion-textarea> -->\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Đã chuyển sang VNv2</ion-label>\n      <ion-textarea #textOutput rows="3" maxLength="500" [(ngModel)]="outputData" readonly></ion-textarea>\n    </ion-item>\n\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/tranthehuy/code/ionic/myApp/src/pages/about/about.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], AboutPage);
     return AboutPage;
-    var _a;
 }());
 
 //# sourceMappingURL=about.js.map
