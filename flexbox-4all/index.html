@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox 4 All</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style media="screen">
+      .workspace{
+        background: #34495e;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        height: 80vh;
+      }
+      .paper{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        align-items:  center;
+        justify-content: center;
+      }
+      .paper1{
+        background: #f1c40f;
+        font-size: 12px;
+        padding: 10px;
+      }
+      .paper2{
+        background: #e67e22;
+        font-size: 16px;
+        padding: 10px;
+      }
+      .paper3{
+        background: #e74c3c;
+        font-size: 24px;
+        padding: 10px;
+      }
+      .box1{
+        background: #1abc9c;
+        font-size: 12px;
+        width: 30px;
+        height: 30px;
+      }
+      .box2{
+        background: #2ecc71;
+        font-size: 16px;
+        width: 45px;
+        height: 45px;
+      }
+      .box3{
+        background: #3498db;
+        font-size: 24px;
+        width: 80px;
+        height: 80px;
+      }
+      .flex-option{
+        float: right;
+        width: 150px;
+      }
+      .btn{
+        margin: 3px;
+      }
+      textarea{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Flexbox 4 All -  A sandbox for creating flexbox div - From Huytran</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+    	<div class="row">
+    		<div class="col-md-4">
+    			<div class="panel panel-default">
+    				<div class="panel-heading">
+    					<h3 class="panel-title">
+    						Attribute
+    					</h3>
+    				</div>
+    				<div class="panel-body">
+
+              <p>
+                Flex Direction:
+                <select class="flex-option" name="flex-direction">
+                  <option value=""></option>
+                  <option value="row">row</option>
+                  <option value="row-reverse">row-reverse</option>
+                  <option value="column">column</option>
+                  <option value="column-reverse">column-reverse</option>
+                </select>
+              </p>
+
+              <p>
+                Justify Content:
+                <select class="flex-option" name="justify-content">
+                  <option value=""></option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="center">center</option>
+                  <option value="space-between">space-between</option>
+                  <option value="space-around">space-around</option>
+                  <option value="space-evenly">space-evenly</option>
+                </select>
+              </p>
+
+              <p>
+                Align Items:
+                <select class="flex-option" name="align-items">
+                  <option value=""></option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="center">center</option>
+                  <option value="baseline">baseline</option>
+                  <option value="stretch">stretch</option>
+                </select>
+              </p>
+
+              <p>
+                Flex Wrap:
+                <select class="flex-option" name="flex-wrap">
+                  <option value=""></option>
+                  <option value="nowrap">nowrap</option>
+                  <option value="wrap">wrap</option>
+                  <option value="wrap-reverse">wrap-reverse</option>
+                </select>
+              </p>
+
+              <p>
+                Align Content:
+                <select class="flex-option" name="align-content">
+                  <option value=""></option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="center">center</option>
+                  <option value="space-between">space-between</option>
+                  <option value="space-around">space-around</option>
+                  <option value="stretch">stretch</option>
+                </select>
+              </p>
+
+    				</div>
+    			</div>
+
+          <div class="panel panel-default">
+    				<div class="panel-heading">
+    					<h3 class="panel-title">
+    						Elements
+    					</h3>
+    				</div>
+    				<div class="panel-body">
+              <div class="btn btn-primary btn-onlyABC">
+                Only A,B,C
+              </div>
+
+              <div class="btn btn-primary btn-moreABC">
+                More A,B,C
+              </div>
+
+              <div class="btn btn-primary btn-only3Boxes">
+                Only 3 boxes
+              </div>
+
+              <div class="btn btn-primary btn-mores3Boxes">
+                Append 3 boxes
+              </div>
+    				</div>
+    			</div>
+
+          <div class="panel panel-default">
+    				<div class="panel-heading">
+    					<h3 class="panel-title">
+    						Source Code
+    					</h3>
+    				</div>
+    				<div class="panel-body">
+              <textarea name="name" rows="8" id="sourcecode" >
+              </textarea>
+    				</div>
+    			</div>
+
+    		</div>
+
+        <div class="col-md-8">
+          <!-- Main component for a primary marketing message or call to action -->
+          <div class="workspace">
+            <div class="paper paper1">
+              <span>A</span>
+            </div>
+            <div class="paper paper2">
+              <span>B</span>
+            </div>
+            <div class="paper paper3">
+              <span>C</span>
+            </div>
+          </div>
+    		</div>
+    	</div>
+
+      <div class="template hidden">
+        <div class="onlyABC">
+          <div class="paper paper1">
+            <span>A</span>
+          </div>
+          <div class="paper paper2">
+            <span>B</span>
+          </div>
+          <div class="paper paper3">
+            <span>C</span>
+          </div>
+        </div>
+
+        <div class="onlyBoxes">
+          <div class="paper box1">
+            <span>box1</span>
+          </div>
+          <div class="paper box2">
+            <span>box2</span>
+          </div>
+          <div class="paper box3">
+            <span>box3</span>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+          function generateCode(){
+            var obj = ".myflex{\n";
+            $(".flex-option").each(function(i,e){
+              var nameAttr = $(e).attr("name");
+              var valueAttr = $(e).val();
+              if (valueAttr!=""){
+                obj = obj + "  "+nameAttr + ": " + valueAttr + "\n";
+              }
+            });
+            obj = obj + "}";
+            $("#sourcecode").val(obj);
+          }
+          $(".flex-option").change(function(){
+            var nameAttr = $(this).attr("name");
+            var valueAttr = $(this).val();
+            $(".workspace").css(nameAttr,valueAttr);
+            generateCode();
+          });
+
+          $(".btn-onlyABC").click(function(){
+            $(".workspace").html($(".onlyABC").html());
+          });
+
+          $(".btn-moreABC").click(function(){
+            $(".workspace").append($(".onlyABC").html());
+          });
+
+          $(".btn-only3Boxes").click(function(){
+            $(".workspace").html($(".onlyBoxes").html());
+          });
+
+          $(".btn-mores3Boxes").click(function(){
+            $(".workspace").append($(".onlyBoxes").html());
+          });
+        });
+      </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
