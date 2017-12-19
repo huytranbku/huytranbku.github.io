@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rectangle Project</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style media="screen">
+      .workspace{
+        background: gray;
+
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+
+        align-items: center;
+        justify-content: center;
+
+
+        height: 80vh;
+      }
+
+      .paper{
+        display: block !important;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Rectangle Project Beta 1</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tập tin <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Tạo mới</a></li>
+                  <li><a href="#">Mở tập tin .json</a></li>
+                  <li><a href="#">Lưu tập tin .json</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Xuất ra định dạng</li>
+                  <li><a href="#">.jpg</a></li>
+                  <li><a href="#">.png</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Chức năng</a></li>
+              <li><a href="#">Công cụ</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./">Giới thiệu thêm về dự án</a></li>
+              <li><a href="../navbar-static-top/">Tài liệu hướng dẫn</a></li>
+              <li><a href="../navbar-fixed-top/">Tác giả</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="workspace">
+        <canvas class="paper" id="myCanvas" width="300" height="300">
+        </canvas>
+      </div>
+
+    </div> <!-- /container -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
