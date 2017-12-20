@@ -3,16 +3,159 @@
   <head>
     <meta charset="utf-8">
     <title>Huy Tran BKU</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .workspace{
+        background: #34495e;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        height: 80vh;
+      }
+      .paper{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        align-items:  center;
+        justify-content: center;
+      }
+      .paper1{
+        background: #f1c40f;
+        font-size: 12px;
+        padding: 10px;
+      }
+      .paper2{
+        background: #e67e22;
+        font-size: 16px;
+        padding: 10px;
+      }
+      .paper3{
+        background: #e74c3c;
+        font-size: 24px;
+        padding: 10px;
+      }
+      .box1{
+        background: #1abc9c;
+        font-size: 12px;
+        width: 30px;
+        height: 30px;
+      }
+      .box2{
+        background: #2ecc71;
+        font-size: 16px;
+        width: 45px;
+        height: 45px;
+      }
+      .box3{
+        background: #3498db;
+        font-size: 24px;
+        width: 80px;
+        height: 80px;
+      }
+      .flex-option{
+        float: right;
+        width: 150px;
+      }
+      .btn{
+        margin: 3px;
+      }
+      textarea{
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <h1><a href="//github.com/huytranbku">Huytranbku Github</a></h1>
-    <h3>We can let the world more better...</h3>
-    <ul>
-      <li> Ứng dụng chuyển đổi tiếng Việt ver 2 <a href="/tieng-viet-ver2/index.html">cho Web</a> <a href="/tieng-viet-ver2/app.apk">cho android</a> </li>
-      <li> Ionic chat app using Firebase db <a href="/vn-utility/index.html">cho Web</a> <a href="/vn-utility/app.apk">cho android</a> </li>
-      <li> Generator cho flexbox div <a href="/flexbox-4all/index.html">cho Web</a> </li>
-      <li> Dự án rectangle <a href="/rectangle/index.html">cho Web</a> </li>
-    </ul>
-    <p> <i>version: 1.0 </i> </p>
+    <div class="container">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="//github.com/huytranbku">Huytranbku Github</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <h1>We can let the world more better...</h1>
+
+    	<div class="row">
+    		<div class="col-md-4">
+          <h3>Product</h3>
+          <div class="panel panel-default">
+    				<div class="panel-heading">
+    					<h3 class="panel-title">
+    						Vietnamese v2 Translate App
+    					</h3>
+    				</div>
+    				<div class="panel-body">
+              Ứng dụng chuyển đổi tiếng Việt ver 2 <a href="/tieng-viet-ver2/index.html">cho Web</a> <a href="/tieng-viet-ver2/app.apk">cho android</a>
+    				</div>
+    			</div>
+
+    		</div>
+
+        <div class="col-md-4">
+          <h3>Tools</h3>
+
+          <div class="panel panel-default">
+    				<div class="panel-heading">
+    					<h3 class="panel-title">
+    						Chat app template using Firebase and Ionic
+    					</h3>
+    				</div>
+    				<div class="panel-body">
+              Ionic chat app using Firebase db <a href="/vn-utility/index.html">cho Web</a> <a href="/vn-utility/app.apk">cho android</a>
+    				</div>
+    			</div>
+
+          <div class="panel panel-default">
+    				<div class="panel-heading">
+    					<h3 class="panel-title">
+    						Sandbox to make flex div
+    					</h3>
+    				</div>
+    				<div class="panel-body">
+              Generator cho flexbox div <a href="/flexbox-4all/index.html">cho Web</a>
+    				</div>
+    			</div>
+
+    		</div>
+
+        <div class="col-md-4">
+          <h3>Ideas</h3>
+          <div class="panel panel-default">
+    				<div class="panel-heading">
+    					<h3 class="panel-title">
+    						Rectangle Project ??? Coming soon...
+    					</h3>
+    				</div>
+    				<div class="panel-body">
+              Dự án rectangle <a href="/rectangle/index.html">cho Web</a>
+    				</div>
+    			</div>
+
+    		</div>
+
+    	</div>
+
+
+    </div> <!-- /container -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+
+        });
+      </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
