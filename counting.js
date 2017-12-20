@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var d = new Date();
   var temp = d.yyyymmdd() + "_" + d.toTimeString().substring(0,8) + "_" + d.getTime();
   var n = temp.replace(/[^a-z0-9\_]/gi,'');
-  var source = window.location.hostname;
-  var hostname = source.replace(/[^a-z0-9]/gi,'');
+  var source = window.location.hostname + window.location.pathname.replace("/","_");
+  var hostname = source.replace(/[^a-z0-9\_]/gi,'');
 
   firebase.database().ref('counting/' + hostname + "/" + n  ).set({
     time: d.toLocaleString()
