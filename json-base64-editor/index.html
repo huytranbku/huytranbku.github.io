@@ -58,11 +58,14 @@
         float: right;
         width: 150px;
       }
-      .btn{
-        margin: 3px;
-      }
+
       textarea{
         width: 100%;
+      }
+      .resultTranlator{
+        width: 100%;
+        min-height: 200px;
+        background-color: #eee;
       }
     </style>
   </head>
@@ -86,6 +89,14 @@
         </div><!--/.container-fluid -->
       </nav>
 
+      <a href="#base64">
+        #Base64
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#url-decode">
+        #Url-Decode
+      </a>
+
     	<div class="row">
     		<div class="col-md-12">
     			<div class="panel panel-default">
@@ -101,7 +112,7 @@
                   <textarea class="jsonSource" rows="20" id="jsonSource"></textarea>
                 </div>
                 <div class="col-xs-6">
-                  <h3>Json tree <button class="btn btn-primary" onclick="copyToClipboard(document.getElementById('workspace')); alert('copied');">Copy to Clipboard</button> </h3>
+                  <h3>Json tree <button class="btn btn-default" onclick="copyToClipboard(document.getElementById('workspace')); alert('copied');">Copy to Clipboard</button> </h3>
                   <div class="workspace" id="workspace">
                     <<< Paste your urly code here
                   </div>
@@ -113,23 +124,52 @@
 
           <div class="panel panel-default">
     				<div class="panel-heading">
-    					<h3 class="panel-title">
+    					<h3 class="panel-title" id="base64">
     						Base64 translator
     					</h3>
     				</div>
     				<div class="panel-body">
-              <h1>Coming soon!</h1>
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3>From Base64 to String</h3>
+                  <textarea class="jsonB2S" rows="10" id="jsonB2S"></textarea>
+                  <pre class="resultTranlator" id="resultB2S">
+                    <<< Enter your code in above box >>>
+                  </pre>
+                  <button class="btn btn-default" onclick="copyToClipboard(document.getElementById('resultB2S')); alert('copied');">Copy to Clipboard</button>
+                </div>
+                <div class="col-xs-6">
+                  <h3>From String to Base64</h3>
+                  <textarea class="jsonS2B" rows="10" id="jsonS2B"></textarea>
+                  <pre class="resultTranlator" id="resultS2B">
+                    <<< Enter your code in above box >>>
+                  </pre>
+                  <button class="btn btn-default" onclick="copyToClipboard(document.getElementById('resultS2B')); alert('copied');">Copy to Clipboard</button>
+                </div>
+              </div>
     				</div>
     			</div>
 
           <div class="panel panel-default">
     				<div class="panel-heading">
-    					<h3 class="panel-title">
+    					<h3 class="panel-title" id="url-decode">
     						Url decoder
     					</h3>
     				</div>
     				<div class="panel-body">
-              <h1>Coming soon!</h1>
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3>Url Data</h3>
+                  <textarea class="jsonB2S" rows="10" id="urlStringCode"></textarea>
+                </div>
+                <div class="col-xs-6">
+                  <h3>Result</h3>
+                  <div class="resultTranlator" id="resultStringDecode">
+                    <<< Enter your code here
+                  </div>
+                  <button class="btn btn-default" onclick="copyToClipboard(document.getElementById('resultStringDecode')); alert('copied');">Copy to Clipboard</button>
+                </div>
+              </div>
     				</div>
     			</div>
 
@@ -142,74 +182,10 @@
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
       crossorigin="anonymous"></script>
-
-      <script type="text/javascript">
-
-        function copyToClipboard(elem) {
-        	  // create hidden text element, if it doesn't already exist
-            var targetId = "_hiddenCopyText_";
-            var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
-            var origSelectionStart, origSelectionEnd;
-            if (isInput) {
-                // can just use the original source element for the selection and copy
-                target = elem;
-                origSelectionStart = elem.selectionStart;
-                origSelectionEnd = elem.selectionEnd;
-            } else {
-                // must use a temporary form element for the selection and copy
-                target = document.getElementById(targetId);
-                if (!target) {
-                    var target = document.createElement("textarea");
-                    target.style.position = "absolute";
-                    target.style.left = "-9999px";
-                    target.style.top = "0";
-                    target.id = targetId;
-                    document.body.appendChild(target);
-                }
-                target.textContent = elem.textContent;
-            }
-            // select the content
-            var currentFocus = document.activeElement;
-            target.focus();
-            target.setSelectionRange(0, target.value.length);
-
-            // copy the selection
-            var succeed;
-            try {
-            	  succeed = document.execCommand("copy");
-            } catch(e) {
-                succeed = false;
-            }
-            // restore original focus
-            if (currentFocus && typeof currentFocus.focus === "function") {
-                currentFocus.focus();
-            }
-
-            if (isInput) {
-                // restore prior selection
-                elem.setSelectionRange(origSelectionStart, origSelectionEnd);
-            } else {
-                // clear temporary content
-                target.textContent = "";
-            }
-            return succeed;
-        }
-
-        $(document).ready(function(){
-          $("#jsonSource").keyup(function(){
-            var str = $("#jsonSource").val();
-            str = str.replace(/\“/g, '"');
-            str = str.replace(/\”/g, '"');
-            var obj = JSON.parse(str);
-            console.log(JSON.stringify(obj));
-            $("#workspace").html(JSONTree.create(obj));
-          });
-
-        });
-      </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="json-tree/dist/js/jsontree.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script src="https://huytranbku.github.io/counting.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
