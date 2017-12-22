@@ -18,23 +18,12 @@
         justify-content: center;
 
 
-        height: 100vh;
-        width: 100vw;
+        height: 80vh;
       }
 
       .paper{
         display: block !important;
         background: white;
-      }
-
-      .container-menu{
-        opacity: 0.9;
-        position: fixed;
-        margin: auto;
-        width: 100%;
-      }
-      .navbar{
-        width: 100% !important;
       }
     </style>
   </head>
@@ -42,9 +31,10 @@
     <div class="hidden">
       <input type='file' name='img' size='65' id='inputOpenFile' onchange='selectedFile();' />
     </div>
-    <div class="container-fluid container-menu">
+    <div class="container">
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
+        <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -59,13 +49,13 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tập tin <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#" onclick="openFile();">Mở file ảnh</a></li>
-                  <!-- <li><a href="#">Mở tập tin .json</a></li>
+                  <li><a href="#" onclick="openFile();">Tạo mới</a></li>
+                  <li><a href="#">Mở tập tin .json</a></li>
                   <li><a href="#">Lưu tập tin .json</a></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Xuất ra định dạng</li>
                   <li><a href="#">.jpg</a></li>
-                  <li><a href="#">.png</a></li> -->
+                  <li><a href="#">.png</a></li>
                 </ul>
               </li>
 
@@ -73,34 +63,22 @@
               <li><a href="#">Công cụ</a></li>
 
             </ul>
-
             <ul class="nav navbar-nav navbar-right">
-
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <span class="glyphicon glyphicon-star"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="./">Giới thiệu thêm về dự án</a></li>
-                  <li><a href="../navbar-static-top/">Tài liệu hướng dẫn</a></li>
-                  <li><a href="../navbar-fixed-top/">Tác giả</a></li>
-                </ul>
-              </li>
-
-
+              <li><a href="./">Giới thiệu thêm về dự án</a></li>
+              <li><a href="../navbar-static-top/">Tài liệu hướng dẫn</a></li>
+              <li><a href="../navbar-fixed-top/">Tác giả</a></li>
             </ul>
           </div><!--/.nav-collapse -->
-
+        </div><!--/.container-fluid -->
       </nav>
 
       <!-- Main component for a primary marketing message or call to action -->
-
+      <div class="workspace">
+        <canvas class="paper" id="myCanvas" >
+        </canvas>
+      </div>
 
     </div> <!-- /container -->
-    <div class="workspace">
-      <canvas class="paper" id="myCanvas" width="300" height="300">
-      </canvas>
-    </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
@@ -119,17 +97,8 @@
       }
 
       function selectedFile(){
-        if (document.getElementById("inputOpenFile").files[0]){
-          draw();
-        }
-      }
-
-      function min(a,b){
-        if (a>b){
-          return b;
-        } else {
-          return a;
-        }
+        console.log("selected a file");
+        draw();
       }
 
       function draw() {
@@ -141,31 +110,17 @@
 
         img.src = src;
         img.onload = function(){
-          var newHeight = img.height;
-    	    var newWidth = img.width;
 
-          var canvasHeight;
-          var canvasWidth;
+          setInterval(function(){
+            newHeight = img.height;
+      	    newWidth = img.width;
 
-          var scale = min(800/newWidth,800/newHeight);
+            $("#myCanvas").width(newWidth);
+            $("#myCanvas").height(newHeight);
 
-          console.log(scale);
-
-          if (scale < 1){
-            canvasHeight = scale * newHeight;
-            canvasWidth = scale * newWidth;
-          }
-
-          $("#myCanvas").width(canvasWidth);
-          $("#myCanvas").height(canvasHeight);
-
-          setTimeout(function(){
-            ctx = document.getElementById('myCanvas').getContext('2d');
-            ctx.canvas.width  = canvasWidth;
-            ctx.canvas.height = canvasHeight;
-            ctx.drawImage(img, 0,0, newWidth, newHeight, 0 ,0, canvasWidth, canvasHeight);
+            ctx.drawImage(img,0,0);
             url.revokeObjectURL(src);
-          },100);
+          },1000);
 
         }
       }
